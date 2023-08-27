@@ -4,15 +4,9 @@ Welcome to the official GitHub repository for the Jaguar Motors franchise websit
 ## Table of Contents
 
 - [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Contributing](#contributing)
-- [Roadmap](#roadmap)
-- [License](#license)
-- [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
 
 ## Screenshots
 

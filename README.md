@@ -17,7 +17,7 @@ Welcome to the official GitHub repository for the Jaguar Motors franchise websit
 ## Screenshots
 
 ![Homepage](screenshots/HM.1.png)
-![Product Page](screenshots/product-page.png)
+![Homepage](screenshots/HM.2.png)
 
 
 ## Technologies Used

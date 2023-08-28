@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .background {
+    background-image: url('jcar15.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffff;
+    text-shadow: -1px -1px 0 black;
+  }
+  .home-btn {
+    background-color: #1e1e1e;
+    color: #ffff; 
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .background {
+    position: relative;
+}
+  
+ 
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  select {
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-shadow: -1px -1px 0 black;
+  }
+  
+  option {
+    background-color: #222;
+  }
+  
+  option:checked {
+    background-color: #444;
+  }
+  
+  .attractive-line {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  .attractive-line::before {
+    content: open-quote;
+    font-size: 2rem;
+  }
+  
+  .attractive-line::after {
+    content: close-quote;
+    font-size: 2rem;
+  }
+  

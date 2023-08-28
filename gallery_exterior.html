@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaguar Motors Gallery</title>
+  <link rel="stylesheet" href="gallery_interior.css">
+</head>
+<body>
+
+  <div class="frame1">
+    <div>
+    <h1>JAGUAR EXTERIOR</h1>
+    <p id="description">Welcome to the luxurious world of Jaguar interiors. Supreme driving comfort</p>
+  </div>
+  <div class="rights">
+    <a href="jaguar_main.html">
+      <button class="home-btn">Home</button></a>
+    </div>
+  </div>
+
+
+  <div class="frame2">
+    <div class="image-slider">
+      <img src="jcar2.jpeg" alt="Image 1" class="slide active">
+      <img src="jcar1.jpeg" alt="Image 2" class="slide">
+      <img src="jcar3.jpeg" alt="Image 3" class="slide">
+      <img src="jcar10.jpg" alt="Image 4" class="slide">
+    </div>
+    <div class="controls">
+      <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+      <span class="next" onclick="changeSlide(1)">&#10095;</span>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const description = document.getElementById('description');
+
+function changeSlide(n) {
+  currentSlide += n;
+  if (currentSlide >= slides.length) {
+    currentSlide = 0;
+  } else if (currentSlide < 0) {
+    currentSlide = slides.length - 1;
+  }
+  showSlide(currentSlide);
+}
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+
+  switch (index) {
+    case 0:
+      description.innerText = "High-intensity beams with precise focus for enhanced visibility";
+      break;
+    case 1:
+      description.innerText = " Soft and gentle illumination lamplight";
+      break;
+    case 2:
+      description.innerText = "Cutting edge design";
+      break;
+    case 3:
+      description.innerText = "The jaguar's sleek and graceful design embodies the spirit of adventure and a sense of prestige.";
+      break;
+    default:
+      break;
+  }
+}
+
+showSlide(currentSlide);
+
+  </script>
+</body>
+</html>

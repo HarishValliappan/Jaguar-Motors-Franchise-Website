@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaguar Car Selection</title>
+  <link rel="stylesheet" href="car_type.css">
+</head>
+<body>
+  <div class="background">
+    <a href="jaguar_main.html">
+    <button class="home-btn">Home</button></a>
+    <div class="content">
+      <h1>Select Your Favorite Jaguar Car</h1>
+      <select id="carSelect" onchange="selectFavoriteCar()">
+        <option value="" disabled selected>Select your favorite</option>
+        <option value="f-pace">F-PACE</option>
+        <option value="i-pace">I-PACE</option>
+        <option value="f-type">Jaguar F-TYPE</option>
+      </select>
+    </div>
+  </div>
+  <p class="attractive-line">Explore the elegance of old classic Jaguar models that define luxury.</p>
+  <script>
+    function selectFavoriteCar() {
+      var selectedCar = document.getElementById('carSelect').value;
+      
+      if (selectedCar === 'f-pace') {
+        window.location.href = 'f-pace.html';
+      } else if (selectedCar === 'i-pace') {
+        window.location.href = 'i-pace.html';
+      } else if (selectedCar === 'f-type') {
+        window.location.href = 'f-type.html';
+      } else {
+        alert('Please select your favorite Jaguar car');
+      }
+    }
+  </script>
+</body>
+</html>

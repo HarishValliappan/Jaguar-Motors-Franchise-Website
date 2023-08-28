@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Drive Registration</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    header{
+        position: relative;
+    }
+    .header img {
+    margin-right:0px;
+    width: 160px;
+    height: 70px;
+  }
+  .home-img-btn:hover {
+    background-color: rgb(33, 33, 33);
+    transform: scale(1.2);
+}
+    .title {
+      text-align: center;
+    }
+
+    .form-container {
+      margin: auto;
+      width: 50%;
+      padding: 20px;
+      background-color: #333;
+      border-radius: 10px;
+      margin-top: 50px;
+    }
+
+    .form-container input, .form-container select {
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #555;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .form-container button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .success-message {
+      padding: 10px;
+      background-color: #28a745;
+      color: #fff;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+    <div class="header">
+        <a href="jaguar_main.html">
+            <button class="home-img-btn">
+                <img src="mainlogo.jpg" alt="Jaguar Logo">
+            </button>
+        </a>
+    </div>
+    
+  <div class="title">
+    <h1><i>Test Drive Registration</i></h1>
+  </div>
+  <div class="form-container">
+    <form id="registration-form" method="post" action="test_drive.php">
+      <input type="text" name="firstname" placeholder="First Name" required>
+      <input type="text" name="lastname" placeholder="Last Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+      <select name="car_type" required>
+        <option value="">Select Car Type</option>
+        <option value="Sedan">F-type</option>
+        <option value="SUV">F-pace</option>
+        <option value="Sports">I-pace</option>
+      </select>
+      <select name="nearest_area" required>
+        <option value="">Choose Nearest Area</option>
+        <option value="Area 1">Guindy</option>
+        <option value="Area 2">Tambaram</option>
+        <option value="Area 3">OMR</option>
+      </select>
+      <input type="date" name="date" required>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="success-message" class="success-message" style="display: none;"></div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#registration-form').submit(function(e) {
+        e.preventDefault();
+        var form = $(this);
+        var url = form.attr('action');
+  
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", 'test_drive.php', true); 
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            $('#success-message').text(xhr.responseText).show();
+            form.trigger("reset");
+          }
+        };
+  
+        xhr.send(form.serialize());
+      });
+    });
+</script>
+</body>
+</html>
